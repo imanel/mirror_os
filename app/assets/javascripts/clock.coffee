@@ -2,14 +2,13 @@ class Clock
   @REFRESH_TIMER: 1000
 
   constructor: (@elem) ->
-    @elem.append '<div id="clock_time"></div><div id="clock_date" class="small dimmed"></div>'
-    @time = @elem.find '#clock_time'
+    @elem.append '<div id="clock_date"></div><div id="clock_time"></div>'
     @date = @elem.find '#clock_date'
-    moment.locale('pl')
+    @time = @elem.find '#clock_time'
 
   refresh: =>
+    @date.html moment().format('dddd, LL')
     @time.html moment().format('LT')
-    @date.html moment().format('L')
 
 $ ->
   elem = $('#clock')

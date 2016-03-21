@@ -1,3 +1,12 @@
-#clock {
+@import 'common';
 
+#clock {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  #clock_date {
+    font-size: $font-size-sm;
+    color: $font-color-dimmed;
+  }
 }
